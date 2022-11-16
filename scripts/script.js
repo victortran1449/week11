@@ -50,7 +50,13 @@
 // let result = document.querySelector("#result");
 // result.textContent = area;
 
-let shoppingItems = ["cheese", "bread", "green pepper", "hotdog"];
+let shoppingItems = [
+  "cheese",
+  "bread",
+  "green pepper",
+  "hotdog",
+  "green shirt",
+];
 // DOM node for <ul>
 const shoppingListElement = document.querySelector(".shopping");
 
@@ -69,3 +75,14 @@ const changeListStyle = (list) => {
 };
 
 changeListStyle(shoppingListElement);
+
+const makeGreen = () => {
+  const allListItems = document.querySelectorAll(".shopping li");
+  for (let item of allListItems) {
+    if (item.textContent.includes("green")) {
+      item.classList.add("green");
+    }
+  }
+};
+
+makeGreen();
