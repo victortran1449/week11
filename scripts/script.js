@@ -25,6 +25,16 @@
 // greet("Victor", "afternoon")
 // greet("Victor")
 
+// const calcArea = (val) => {
+//   val = Math.PI * Math.pow(val, 2);
+//   return val;
+// };
+
+// let userInput = prompt("Enter a value: ");
+// let area = calcArea(userInput).toFixed(2);
+
+// console.log(`The area of a circle with radius ${userInput} is ${area}`);
+
 const calcArea = (val) => {
   val = Math.PI * Math.pow(val, 2);
   return val;
@@ -32,5 +42,10 @@ const calcArea = (val) => {
 
 let userInput = prompt("Enter a value: ");
 let area = calcArea(userInput).toFixed(2);
+alert(`The area of a circle with radius ${userInput} is ${area}`);
 
-console.log(`The area of a circle with radius ${userInput} is ${area}`);
+let radius = document.querySelector("#radius");
+radius.textContent += userInput;
+
+let result = document.querySelector("#result");
+result.textContent = area;
