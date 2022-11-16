@@ -35,17 +35,37 @@
 
 // console.log(`The area of a circle with radius ${userInput} is ${area}`);
 
-const calcArea = (val) => {
-  val = Math.PI * Math.pow(val, 2);
-  return val;
+// const calcArea = (val) => {
+//   val = Math.PI * Math.pow(val, 2);
+//   return val;
+// };
+
+// let userInput = prompt("Enter a value: ");
+// let area = calcArea(userInput).toFixed(2);
+// alert(`The area of a circle with radius ${userInput} is ${area}`);
+
+// let radius = document.querySelector("#radius");
+// radius.textContent += userInput;
+
+// let result = document.querySelector("#result");
+// result.textContent = area;
+
+let shoppingItems = ["cheese", "bread", "green pepper", "hotdog"];
+// DOM node for <ul>
+const shoppingListElement = document.querySelector(".shopping");
+
+const populateList = (arr) => {
+  for (let item of arr) {
+    let listItem = document.createElement("li");
+    listItem.textContent = item;
+    shoppingListElement.appendChild(listItem);
+  }
 };
 
-let userInput = prompt("Enter a value: ");
-let area = calcArea(userInput).toFixed(2);
-alert(`The area of a circle with radius ${userInput} is ${area}`);
+populateList(shoppingItems);
 
-let radius = document.querySelector("#radius");
-radius.textContent += userInput;
+const changeListStyle = (list) => {
+  list.classList.replace("circleList", "squareList");
+};
 
-let result = document.querySelector("#result");
-result.textContent = area;
+changeListStyle(shoppingListElement);
